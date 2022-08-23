@@ -1,7 +1,5 @@
 <template>
     <div class="app">
-       
-       
         <my-button 
             @click="showDialog"
             >
@@ -17,6 +15,7 @@
             <card-list-small 
                 :cards="cards"
                 @remove="removeCity"
+                @resort="resortCity"
             />
             <card-form
             @addNewCity="this.fetchWeather"
@@ -72,7 +71,7 @@ export default {
                 data: data,
             }
             this.cards.push(newCity);
-            this.dialogVisible = false;
+            //this.dialogVisible = false;
         },
         removeCity(card){
             this.cards = this.cards.filter(p => p.id !== card.id)
@@ -81,9 +80,11 @@ export default {
         showDialog(){
             this.dialogVisible = true;
         },
-       
-
-        
+        resortCity(ca){
+            console.log("app -----");
+            console.log(ca);
+            this.cards = ca
+        }
     },
     mounted(){
         this.fetchWeather("London");
