@@ -41,6 +41,9 @@ export default {
             isLoading: false,
             cards: [],
             dialogVisible: false,
+            location: null,
+            gettingLocation: false,
+            errorStr: null,
         }
     },
     methods: {
@@ -54,8 +57,24 @@ export default {
                         appid: this.key
                     }
                 });
-                
-                //this.data = responce.data;
+                this.addCity(responce.data);
+            }catch (e){
+                alert('Error')
+            }finally {
+                this.isLoading = false;
+            }
+        },
+        async fetchWeather2(){
+            try {
+                this.isLoading = true;
+                const responce = await axios.get(`${this.url}weather`, {
+                    params: {
+                        lat: this.location.coords.latitude,
+                        lon: this.location.coords.longitude,
+                        units: this.unit,
+                        appid: this.key
+                    }
+                });
                 this.addCity(responce.data);
             }catch (e){
                 alert('Error')
@@ -84,11 +103,39 @@ export default {
             console.log("app -----");
             console.log(ca);
             this.cards = ca
+        },
+        async getLocation() {
+            return new Promise((resolve, reject) => {
+
+                if(!("geolocation" in navigator)) {
+                reject(new Error('Geolocation is not available.'));
+                }
+
+                navigator.geolocation.getCurrentPosition(pos => {
+                resolve(pos);
+                }, err => {
+                reject(err);
+                });
+
+            });
+        },
+        async locateMe() {
+            this.gettingLocation = true;
+            try {
+                this.gettingLocation = false;
+                this.location = await this.getLocation();
+            } catch(e) {
+                this.gettingLocation = false;
+                this.errorStr = e.message;
+            }finally {
+                this.fetchWeather2();
+            }
         }
     },
     mounted(){
-        this.fetchWeather("London");
-        this.fetchWeather("Ufa");
+        this.locateMe();
+        // this.fetchWeather("London");
+        // this.fetchWeather("Ufa");
     }
 }
 </script>
@@ -113,5 +160,6 @@ body {
     align-items: center;
     margin-top: 15px;
 }
+
 
 </style>
