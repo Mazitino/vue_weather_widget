@@ -2,7 +2,7 @@
 node_modules
 /dist
 deploy.sh
-
+dd.json
 
 # local env files
 .env.local
