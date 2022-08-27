@@ -90,11 +90,12 @@ export default {
                 data: data,
             }
             this.cards.push(newCity);
+            this.saveLocal();
             //this.dialogVisible = false;
         },
         removeCity(card){
             this.cards = this.cards.filter(p => p.id !== card.id)
-
+            this.saveLocal();
         },
         showDialog(){
             this.dialogVisible = true;
@@ -102,7 +103,8 @@ export default {
         resortCity(ca){
             console.log("app -----");
             console.log(ca);
-            this.cards = ca
+            this.cards = ca;
+            this.saveLocal();
         },
         async getLocation() {
             return new Promise((resolve, reject) => {
@@ -130,12 +132,23 @@ export default {
             }finally {
                 this.fetchWeather2();
             }
+        },
+        saveLocal() {
+            console.log("Saving new value of cards (citys)");
+            const parsed = JSON.stringify(this.cards);
+            localStorage.setItem('cards', parsed);
         }
     },
     mounted(){
-        this.locateMe();
-        // this.fetchWeather("London");
-        // this.fetchWeather("Ufa");
+        if (localStorage.getItem('cards')) {
+            try {
+                this.cards = JSON.parse(localStorage.getItem('cards'));
+            } catch(e) {
+                localStorage.removeItem('cards');
+            }
+        }else{
+            this.locateMe();
+        }
     }
 }
 </script>
