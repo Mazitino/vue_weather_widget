@@ -1,9 +1,9 @@
 # vue_weather_widget
 
 ## Link
+```
 https://mazitino.github.io/vue_weather_widget/
 ```
-
 ## Project setup
 ```
 npm install
