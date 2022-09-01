@@ -196,7 +196,7 @@
 .weatherCard .descCard #secondcol{
     padding-right: 20px;
     font-weight: 700;
-    border-right: 1px solid teal;
+    border-right: 1px solid rgba(0, 128, 128, 0.300);
 }
 .weatherCard .descCard #thirdcol{
     padding-right: 10px;
