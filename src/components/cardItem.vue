@@ -144,7 +144,7 @@
 .weatherCard{
     max-height: 600px;
     
-    padding: 25px;
+    padding: 20px;
     margin: 15px;
     background-color: rgb(12, 12, 12);
     border-radius: 10px;
@@ -157,10 +157,10 @@
 }
 .weatherCard .topCard {
     display: flex;
-    margin: 5px 0px 10px 0px;
+    /* margin: 5px 0px 10px 0px;
     padding: 5px;
     border: 2px solid rgba(0, 128, 128, 0.301);
-    border-radius: 10px;
+    border-radius: 10px; */
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
@@ -175,7 +175,7 @@
 }
 
 .weatherCard .descCard {
-    margin: 15px 0px 5px 0px;
+    margin: 0px 0px 5px 0px;
     padding: 20px;
     border: 2px solid rgba(0, 128, 128, 0.300);
     border-radius: 10px;
