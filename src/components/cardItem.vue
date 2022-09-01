@@ -24,28 +24,68 @@
 
         <table class="descCard" cellpadding="0" cellspacing="0">
             <tbody>
-                <tr>
-                    <td id="firstcol">Feels like:</td>
+                <tr class="allrow">
+                    <td id="firstcol">
+                        <fa 
+                        icon="fa-solid fa-temperature-full" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="secondcol">{{ card.data.main.feels_like }} °C</td>
-                    <td id="thirdcol">Pressure:</td>
+                    <td id="thirdcol">
+                        <fa 
+                        icon="fa-solid fa-p" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="forescol">{{ card.data.main.pressure }} hPa</td>
                 </tr>
-                <tr> 
-                    <td id="firstcol">Temp max:</td>
+                <tr class="allrow"> 
+                    <td id="firstcol">
+                        <fa 
+                        icon="fa-solid fa-temperature-arrow-up" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="secondcol">{{ card.data.main.temp_max }} °C</td>
-                    <td id="thirdcol">Wind:</td>
+                    <td id="thirdcol">
+                        <fa 
+                        icon="fa-solid fa-wind" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="forescol">{{ card.data.wind.speed }} m/s</td>
                 </tr>
-                <tr>
-                    <td id="firstcol">Temp min:</td>
+                <tr class="allrow">
+                    <td id="firstcol">
+                        <fa 
+                        icon="fa-solid fa-temperature-arrow-down" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="secondcol">{{ card.data.main.temp_min }} °C</td>
-                    <td id="thirdcol">Clouds:</td>
+                    <td id="thirdcol">
+                        <fa 
+                        icon="fa-solid fa-cloud" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="forescol">{{ card.data.clouds.all }}</td>
                 </tr>
-                <tr>
-                    <td id="firstcol">Humidity:</td>
+                <tr class="allrow">
+                    <td id="firstcol">
+                        <fa 
+                        icon="fa-solid fa-droplet" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="secondcol">{{ card.data.main.humidity }} %</td>
-                    <td id="thirdcol">Visibility:</td>
+                    <td id="thirdcol">
+                        <fa 
+                        icon="fa-solid fa-eye" 
+                        class="faIcon" 
+                        />
+                    </td>
                     <td id="forescol">{{ card.data.visibility }} m</td>
                 </tr>
             </tbody>
@@ -55,16 +95,49 @@
 </template>
 
 <script>
-export default {
+    import { faTemperatureFull } from '@fortawesome/free-solid-svg-icons'
+    import { faTemperatureArrowUp } from '@fortawesome/free-solid-svg-icons'
+    import { faTemperatureArrowDown } from '@fortawesome/free-solid-svg-icons'
+    import { faDroplet } from '@fortawesome/free-solid-svg-icons'
+    import { faP } from '@fortawesome/free-solid-svg-icons'
+    import { faEye } from '@fortawesome/free-solid-svg-icons'
+    import { faWind } from '@fortawesome/free-solid-svg-icons'
+    import { faCloud } from '@fortawesome/free-solid-svg-icons'
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(
+        faWind, 
+        faCloud, 
+        faEye, 
+        faP, 
+        faDroplet,
+        faTemperatureArrowUp,
+        faTemperatureArrowDown,
+        faTemperatureFull
 
-    props:{
-        card: {
-            type: Object,
-            required: true,
-        }
 
+    );
+    export default {
+
+        props:{
+            card: {
+                type: Object,
+                required: true,
+            }
+
+        },
+        components: {
+            'fa': FontAwesomeIcon,
+            faWind, 
+            faCloud,
+            faEye,
+            faP,
+            faDroplet,
+            faTemperatureArrowUp,
+            faTemperatureArrowDown,
+            faTemperatureFull
+        },
     }
-}
 </script>
 
 <style scoped>
@@ -112,20 +185,23 @@ export default {
     display: flex;
     align-items: center;
     text-align: start;
+    justify-content: center;
 }
+
 .weatherCard .descCard #firstcol{
+    padding-bottom: 4px;
     padding-right: 10px;
-    text-align: end;
+    text-align: center;
 }
 .weatherCard .descCard #secondcol{
-    padding-right: 10px;
+    padding-right: 20px;
     font-weight: 700;
     border-right: 1px solid teal;
 }
 .weatherCard .descCard #thirdcol{
     padding-right: 10px;
-    padding-left: 10px;
-    text-align: end; 
+    padding-left: 16px;
+    text-align: center; 
 }
 .weatherCard .descCard #forescol{
     font-weight: 700;
@@ -173,5 +249,9 @@ export default {
 .card_btns:hover {
     transform:  rotate(90deg);
     color: teal;
+}
+.faIcon{
+    color:teal;
+    font-size: 14px ;
 }
 </style>
