@@ -52,6 +52,16 @@ form{
     align-items: stretch;
    
 }
+
+.faIcon{
+
+    color: rgb(248, 248, 248);
+    font-size: 16px ;
+    transition: all 0.3s ease;
+}
+.faIcon:hover{
+    color:rgb(255, 255, 255);
+}
 .turn-up {
     margin: 5px 5px 5px 0px;
     padding: 20px 15px;
@@ -69,15 +79,5 @@ form{
 .turn-up:hover {
     background: rgb(0, 65, 65);
 }
-.faIcon{
-
-    color: rgb(248, 248, 248);
-    font-size: 16px ;
-    transition: all 0.3s ease;
-}
-.faIcon:hover{
-    color:teal;
-}
-
 
 </style>

@@ -159,7 +159,7 @@
     display: flex;
     margin: 5px 0px 10px 0px;
     padding: 5px;
-    border: 2px solid teal;
+    border: 2px solid rgba(0, 128, 128, 0.301);
     border-radius: 10px;
     flex-direction: row;
     align-items: center;
@@ -177,7 +177,7 @@
 .weatherCard .descCard {
     margin: 15px 0px 5px 0px;
     padding: 20px;
-    border: 2px solid teal;
+    border: 2px solid rgba(0, 128, 128, 0.300);
     border-radius: 10px;
     font-size: 14px;
     line-height: 18px;
