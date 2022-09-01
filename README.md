@@ -9,17 +9,16 @@
 
     <body>
         <div id="app">
-            <demo>
+            <weather-widget>
 
-            </demo>
+            </weather-widget >
         </div> 
     </body>
 
-    <script>Vue.createApp({
-        components: {
-        demo: vue_weather_widget
-        }
-    }).mount('#app')
+    <script>
+        Vue.createApp({ 
+            components: { weather-widget : vue_weather_widget} 
+        }).mount('#app')
     </script>  
     
 ```
