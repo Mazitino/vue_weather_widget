@@ -9,7 +9,7 @@
     <head>
         <meta charset="UTF-8">
         <script src="https://unpkg.com/vue@3"></script>
-        <script src="../vue_weather_widget/dist/vue_weather_widget.umd.min.js"></script>
+        <script src="https://mazitino.github.io/vue_weather_widget/lib/vue_weather_widget.umd.min.js"></script>
     
         <title>Demo usage vue weather widget</title>
     </head>
