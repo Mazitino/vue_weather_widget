@@ -4,22 +4,29 @@
 
 #### Usage
 ```
-    <script src="https://unpkg.com/vue@3"></script>
-    <script src="../vue_weather_widget/dist/vue_weather_widget.umd.min.js"></script>
-
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/vue@3"></script>
+        <script src="../vue_weather_widget/dist/vue_weather_widget.umd.min.js"></script>
+    
+        <title>Demo usage vue weather widget</title>
+    </head>
     <body>
         <div id="app">
-            <weather-widget>
-
-            </weather-widget >
+            <weather-widget />
         </div> 
     </body>
-
+   
     <script>
-        Vue.createApp({ 
-            components: { weather-widget : vue_weather_widget} 
+        Vue.createApp({
+            components: {
+                'weather-widget': vue_weather_widget
+            }
         }).mount('#app')
     </script>  
+</html>
     
 ```
 
