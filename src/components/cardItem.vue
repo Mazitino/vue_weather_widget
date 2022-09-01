@@ -154,7 +154,7 @@ export default {
 }
 
 .card_btns:hover {
-    transform:  rotate(360deg);
+    transform:  rotate(90deg);
     color: teal;
 }
 </style>

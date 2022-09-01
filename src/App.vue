@@ -1,22 +1,24 @@
 <template>
     <div class="app">
-        <my-button 
-            @click="showDialog"
-            >
-            Settings
-        </my-button>
+        <fa 
+                icon="fa-solid fa-gear" 
+                class="faIcon gear" 
+                @click="showDialog"
+            />
         <card-list 
             :cards="cards"
             @remove="removeCity"
             v-if="!isLoading"
         />
         <div v-else>Loading...</div>
-         <my-dialog v-model:show="dialogVisible">
+        <my-dialog v-model:show="dialogVisible">
+            <h3 class="desc">Settings:</h3>
             <card-list-small 
                 :cards="cards"
                 @remove="removeCity"
                 @resort="resortCity"
             />
+            <h3 class="desc">Add city:</h3>
             <card-form
             @addNewCity="this.fetchWeather"
             />
@@ -29,9 +31,20 @@ import axios from 'axios';
 import cardList from "@/components/cardList";
 import cardListSmall from "@/components/cardListSmall";
 import cardForm from "@/components/cardForm";
+import myDialog from '@/components/UI/myDialog';
+import { faGear } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faGear);
+    
 export default {
     components: {
-        cardForm, cardList, cardListSmall
+        cardForm, 
+        cardList, 
+        cardListSmall, 
+        myDialog,
+        'fa': FontAwesomeIcon,
+        faGear, 
     },
     data() {
         return {
@@ -173,6 +186,26 @@ body {
     align-items: center;
     margin-top: 15px;
 }
-
+.desc{
+    margin: 10px 0px 0px 8px;
+    color: black;
+}
+.gear {
+  cursor:pointer!important;
+  align-self: flex-end;
+  transition: all 0.3s ease;
+}
+.gear:hover {
+    transform:  rotate(90deg);
+}
+.faIcon{
+    color:rgba(0, 128, 128, 0.233);
+    font-size: 16px ;
+    transition: all 0.3s ease;
+}
+.faIcon:hover{
+    
+    color:rgb(0, 65, 65);
+}
 
 </style>

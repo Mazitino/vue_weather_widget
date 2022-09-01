@@ -31,6 +31,11 @@
 
 <script>
     import draggable from 'vuedraggable'
+    import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
+    import { faBars } from '@fortawesome/free-solid-svg-icons'
+    import { library } from '@fortawesome/fontawesome-svg-core'
+    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+    library.add(faTrashCan, faBars);
     export default {
         props: {
             cards: {
@@ -43,7 +48,10 @@
         instruction: "Drag using the handle icon",
         order: 5,
         components: {
-            draggable
+            draggable, 
+            'fa': FontAwesomeIcon,
+            faTrashCan, 
+            faBars            
         },
         methods: {
             removeAt(idx, el) {
