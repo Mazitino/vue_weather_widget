@@ -2,6 +2,27 @@
 
 #### Link - https://mazitino.github.io/vue_weather_widget/
 
+#### Usage
+```
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="../vue_weather_widget/dist/vue_weather_widget.umd.min.js"></script>
+
+    <body>
+        <div id="app">
+            <demo>
+
+            </demo>
+        </div> 
+    </body>
+
+    <script>Vue.createApp({
+        components: {
+        demo: vue_weather_widget
+        }
+    }).mount('#app')
+    </script>  
+    
+```
 
 ## Project setup
 ```
