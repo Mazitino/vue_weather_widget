@@ -27,7 +27,6 @@
         }).mount('#app')
     </script>  
 </html>
-    
 ```
 
 ## Project setup
