@@ -3,7 +3,7 @@
 #### Link - https://mazitino.github.io/vue_weather_widget/
 
 #### Usage
-`
+```
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -27,7 +27,7 @@
         }).mount('#app')
     </script>  
 </html>
-`
+```
 
 ## Project setup
 ```
