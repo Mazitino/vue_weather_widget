@@ -8,6 +8,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <script src="https://unpkg.com/vue@3"></script>
         <script src="https://mazitino.github.io/vue_weather_widget/lib/vue_weather_widget.umd.min.js"></script>
     
