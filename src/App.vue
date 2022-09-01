@@ -173,6 +173,7 @@ export default {
     box-sizing: border-box;
 }
 body {
+    padding: 5px;
     font-family: 'montserrat', sans-serif;
     color:rgb(255, 255, 255);
     display: flex;
@@ -191,9 +192,11 @@ body {
     color: black;
 }
 .gear {
+    margin-right: 25px;
   cursor:pointer!important;
   align-self: flex-end;
   transition: all 0.3s ease;
+
 }
 .gear:hover {
     transform:  rotate(90deg);

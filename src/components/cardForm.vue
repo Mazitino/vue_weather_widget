@@ -47,6 +47,9 @@ library.add(faTurnUp);
 form{
     display: flex;
     flex-direction: row;
+    
+    justify-content: space-between;
+    align-items: stretch;
    
 }
 .turn-up {

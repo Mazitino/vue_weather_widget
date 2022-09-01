@@ -24,11 +24,11 @@ export default {
 <style>
 .input {
     align-self: auto;
-    
+    width: 100%;
     border: 1px solid teal;
     padding: 18px 15px;
     margin: 5px;
-
+    font-size: 16px;
     border-radius: 5px;
     box-shadow: 0px 0px 5px -3px #000000;
     }

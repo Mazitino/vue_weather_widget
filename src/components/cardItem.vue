@@ -10,11 +10,17 @@
             >
                 ✕
             </span>
-        <div class="tempCard">
-            <div class="location">{{ card.city }} - {{ card.data.sys.country }} </div>
-            <div class="temp"> {{ card.data.main.temp }} °c </div>
-            <div class="location"> {{ card.data.weather[0].description  }}</div>
-        </div>
+            <div class="topCard">
+                <div class="pngCard">
+                    <img  v-bind:src="'http://openweathermap.org/img/wn/' + card.data.weather[0].icon + '@2x.png' "  />
+                    
+                </div>
+                <div class="tempCard">
+                    <div class="location">{{ card.city }} - {{ card.data.sys.country }} </div>
+                    <div class="temp"> {{ card.data.main.temp }} °c </div>
+                    <div class="location"> {{ card.data.weather[0].description  }}</div>
+                </div>
+            </div>
 
         <table class="descCard" cellpadding="0" cellspacing="0">
             <tbody>
@@ -76,14 +82,25 @@ export default {
     border: 1px solid teal;
 
 }
-.weatherCard .tempCard {
+.weatherCard .topCard {
+    display: flex;
     margin: 5px 0px 10px 0px;
-    padding: 20px;
+    padding: 5px;
     border: 2px solid teal;
     border-radius: 10px;
+    flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
+.weatherCard .pngCard {
+    margin: 5px 0px 10px 0px;
+    padding: 5px;
+}
+.weatherCard .tempCard {
+    margin: 5px 0px 10px 0px;
+    padding: 5px;
+}
+
 .weatherCard .descCard {
     margin: 15px 0px 5px 0px;
     padding: 20px;
